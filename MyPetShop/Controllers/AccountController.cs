@@ -15,6 +15,7 @@ namespace MyPetShop.Controllers
     [Authorize]
     public class AccountController : Controller
     {
+        //lợi đẹp trai
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
