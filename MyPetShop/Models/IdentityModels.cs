@@ -20,6 +20,14 @@ namespace MyPetShop.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<Pet> Pets { get; set; }
+        
+        public DbSet<CategoryPet> CategoryPets { get; set; }
+
+        public DbSet<Category> Categories { get; set; }
+
+        public DbSet<PetImage> PetImages { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
