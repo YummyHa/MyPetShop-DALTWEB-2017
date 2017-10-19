@@ -195,6 +195,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -202,21 +203,77 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-responsive.css" />
+    <Content Include="Content\bootstrap-responsive.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrappage.css" />
+    <Content Include="Content\flexslider.css" />
+    <Content Include="Content\jquery.fancybox.css" />
+    <Content Include="Content\main.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\arrow-p.png" />
+    <Content Include="Images\arrow-pleft.png" />
+    <Content Include="Images\bg.png" />
+    <Content Include="Images\carousel\banner-1.jpg" />
+    <Content Include="Images\carousel\banner-2.jpg" />
+    <Content Include="Images\clients\1.png" />
+    <Content Include="Images\clients\14.png" />
+    <Content Include="Images\clients\2.png" />
+    <Content Include="Images\clients\3.png" />
+    <Content Include="Images\clients\35.png" />
+    <Content Include="Images\clients\4.png" />
+    <Content Include="Images\cloth\bootstrap-women-ware1.jpg" />
+    <Content Include="Images\cloth\bootstrap-women-ware2.jpg" />
+    <Content Include="Images\cloth\bootstrap-women-ware3.jpg" />
+    <Content Include="Images\cloth\bootstrap-women-ware4.jpg" />
+    <Content Include="Images\cloth\bootstrap-women-ware5.jpg" />
+    <Content Include="Images\cloth\bootstrap-women-ware6.jpg" />
+    <Content Include="Images\feature_img_1.png" />
+    <Content Include="Images\feature_img_2.png" />
+    <Content Include="Images\feature_img_3.png" />
+    <Content Include="Images\glyphicons-halflings-white.png" />
+    <Content Include="Images\glyphicons-halflings.png" />
+    <Content Include="Images\gotop.png" />
+    <Content Include="Images\ladies\1.jpg" />
+    <Content Include="Images\ladies\2.jpg" />
+    <Content Include="Images\ladies\3.jpg" />
+    <Content Include="Images\ladies\4.jpg" />
+    <Content Include="Images\ladies\5.jpg" />
+    <Content Include="Images\ladies\6.jpg" />
+    <Content Include="Images\ladies\7.jpg" />
+    <Content Include="Images\ladies\8.jpg" />
+    <Content Include="Images\ladies\9.jpg" />
+    <Content Include="Images\line_bar.png" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\m1.png" />
+    <Content Include="Images\m2.png" />
+    <Content Include="Images\m3.png" />
+    <Content Include="Images\m4.png" />
+    <Content Include="Images\m5.png" />
+    <Content Include="Images\m6.png" />
+    <Content Include="Images\pageBanner.png" />
+    <Content Include="Images\project_img2.jpg" />
+    <Content Include="Images\project_img3.jpg" />
+    <Content Include="Images\project_img4.jpg" />
+    <Content Include="Images\project_img6.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\common.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.7.2.min.js" />
+    <Content Include="Scripts\jquery.fancybox.js" />
+    <Content Include="Scripts\jquery.flexslider-min.js" />
+    <Content Include="Scripts\jquery.scrolltotop.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -224,6 +281,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\superfish.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -258,6 +316,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_LayoutUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
