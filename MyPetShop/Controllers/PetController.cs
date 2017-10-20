@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MyPetShop.Models;
+using MyPetShop.ViewModels;
 
 namespace MyPetShop.Controllers
 {
@@ -29,7 +30,13 @@ namespace MyPetShop.Controllers
         {
             var list = GetPets(10);
 
-            return View(list);
+            var viewModel = new PetViewModel
+            {
+                PetImages = _dbContext.PetImages.ToList(),
+                Pets = _dbContext.Pets.ToList()
+            };
+
+            return View(viewModel);
         }
     }
 }

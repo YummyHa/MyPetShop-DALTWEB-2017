@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MyPetShop.Models.Pet>
+﻿@model MyPetShop.ViewModels.PetViewModel
 
 @{
     ViewBag.Title = "Index";
@@ -20,14 +20,23 @@
             <div class="carousel-inner">
                 <div class="active item">
                     <ul class="thumbnails">                           
-                        @foreach (var pet in Model)
+                        @foreach (var pet in Model.Pets)
                         {
+                            var image = "";
+                            foreach (var petImage in Model.PetImages)
+                            {
+                                if (petImage.PetId == pet.Id)
+                                {
+                                    image = petImage.Uri.ToString();
+                                    break;
+                                }
+                            }
                             if (i <= 3)
                             {
                                 <li class="span3">
                                     <div class="product-box">
                                         <span class="sale_tag"></span>
-                                        <p><a href="product_detail.html"><img src="~/Images/corgi_1.png" alt=""/></a>
+                                        <p><a href="product_detail.html"><img src="@image" alt=""/></a>
                                         </p>
                                         <a href="product_detail.html" class="title">@pet.Name</a><br/>
                                         <a href="products.html" class="">AGE: @pet.Age years</a>
@@ -46,15 +55,24 @@
                 <div class="item">
                     @{ i = 0; }
                     <ul class="thumbnails">
-                        @foreach (var pet in Model)
+                        @foreach (var pet in Model.Pets)
                         {
+                            var image = "";
+                            foreach (var petImage in Model.PetImages)
+                            {
+                                if (petImage.PetId == pet.Id)
+                                {
+                                    image = petImage.Uri.ToString();
+                                    break;
+                                }
+                            }
                             if (i >= 4 && i <= 7)
                             {
                                 <li class="span3">
                                     <div class="product-box">
                                         <span class="sale_tag"></span>
                                         <p>
-                                            <a href="product_detail.html"><img src="~/Images/corgi_1.png" alt=""/></a>
+                                            <a href="product_detail.html"><img src="@image" alt=""/></a>
                                         </p>
                                         <a href="product_detail.html" class="title">@pet.Name</a><br/>
                                         <a href="products.html" class="">AGE: @pet.Age years</a>
@@ -86,15 +104,24 @@
             <div class="carousel-inner">
                 <div class="active item">
                     <ul class="thumbnails">
-                        @foreach (var pet in Model)
+                        @foreach (var pet in Model.Pets)
                         {
                             if (j <= 3)
                             {
+                                var image = "";
+                                foreach (var petImage in Model.PetImages)
+                                {
+                                    if (petImage.PetId == pet.Id)
+                                    {
+                                        image = petImage.Uri.ToString();
+                                        break;
+                                    }
+                                }
                                 <li class="span3">
                                     <div class="product-box">
                                         <span class="sale_tag"></span>
                                         <p>
-                                            <a href="product_detail.html"><img src="~/Images/british_shorthair_1.png" alt="" /></a>
+                                            <a href="product_detail.html"><img src="@image" alt="" /></a>
                                         </p>
                                         <a href="product_detail.html" class="title">@pet.Name</a><br />
                                         <a href="products.html" class="">AGE: @pet.Age years</a>
@@ -115,8 +142,17 @@
                 <div class="item">
                     @{ j = 0; }
                     <ul class="thumbnails">
-                        @foreach (var pet in Model)
+                        @foreach (var pet in Model.Pets)
                         {
+                            var image = "";
+                            foreach (var petImage in Model.PetImages)
+                            {
+                                if (petImage.PetId == pet.Id)
+                                {
+                                    image = petImage.Uri.ToString();
+                                    break;
+                                }
+                            }
 
                             if (j >= 4 && j <= 7)
                             {
@@ -124,7 +160,7 @@
                                     <div class="product-box">
                                         <span class="sale_tag"></span>
                                         <p>
-                                            <a href="product_detail.html"><img src="~/Images/british_shorthair_1.png" alt=""/></a>
+                                            <a href="product_detail.html"><img src="@image" alt=""/></a>
                                         </p>
                                         <a href="product_detail.html" class="title">@pet.Name</a><br/>
                                         <a href="products.html" class="">AGE: @pet.Age years</a>
