@@ -3,7 +3,7 @@ namespace MyPetShop.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class PopulatePetsTable : DbMigration
+    public partial class PopulatePetsTableAgain : DbMigration
     {
         public override void Up()
         {
