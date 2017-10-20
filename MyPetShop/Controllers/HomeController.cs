@@ -10,7 +10,7 @@ namespace MyPetShop.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return RedirectToAction("Index", "Pet");
         }
          // abcde
         public ActionResult About()

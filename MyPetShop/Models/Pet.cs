@@ -14,7 +14,6 @@ namespace MyPetShop.Models
         public string Name { get; set; }
 
         [Required]
-        [StringLength(255)]
         public string Description { get; set; }
 
         [Required]
@@ -23,6 +22,8 @@ namespace MyPetShop.Models
         [Required]
         public double Price { get; set; }
 
+        // Status = 0 : Available
+        // Status = 1: Unavailable
         [Required]
         public int Status { get; set; }
 

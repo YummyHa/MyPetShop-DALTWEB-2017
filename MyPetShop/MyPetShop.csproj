@@ -192,6 +192,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PetController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -202,6 +203,22 @@
     <Compile Include="Migrations\201710191748596_AddTablePetAndCategoryAndPetImages.cs" />
     <Compile Include="Migrations\201710191748596_AddTablePetAndCategoryAndPetImages.Designer.cs">
       <DependentUpon>201710191748596_AddTablePetAndCategoryAndPetImages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710201544381_PopulateCategoryTable.cs" />
+    <Compile Include="Migrations\201710201544381_PopulateCategoryTable.Designer.cs">
+      <DependentUpon>201710201544381_PopulateCategoryTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710201549562_PopulateCategoryPetsTable.cs" />
+    <Compile Include="Migrations\201710201549562_PopulateCategoryPetsTable.Designer.cs">
+      <DependentUpon>201710201549562_PopulateCategoryPetsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710201559245_PopulatePetsTable.cs" />
+    <Compile Include="Migrations\201710201559245_PopulatePetsTable.Designer.cs">
+      <DependentUpon>201710201559245_PopulatePetsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710201640218_UpdateDescriptionCoulumnInPetsTable.cs" />
+    <Compile Include="Migrations\201710201640218_UpdateDescriptionCoulumnInPetsTable.Designer.cs">
+      <DependentUpon>201710201640218_UpdateDescriptionCoulumnInPetsTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -331,6 +348,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_LayoutUser.cshtml" />
+    <Content Include="Views\Pet\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -354,6 +372,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710191748596_AddTablePetAndCategoryAndPetImages.resx">
       <DependentUpon>201710191748596_AddTablePetAndCategoryAndPetImages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710201544381_PopulateCategoryTable.resx">
+      <DependentUpon>201710201544381_PopulateCategoryTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710201549562_PopulateCategoryPetsTable.resx">
+      <DependentUpon>201710201549562_PopulateCategoryPetsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710201559245_PopulatePetsTable.resx">
+      <DependentUpon>201710201559245_PopulatePetsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710201640218_UpdateDescriptionCoulumnInPetsTable.resx">
+      <DependentUpon>201710201640218_UpdateDescriptionCoulumnInPetsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
