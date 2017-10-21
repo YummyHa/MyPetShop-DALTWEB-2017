@@ -292,6 +292,12 @@
     <Content Include="Images\pageBanner.png" />
     <Content Include="Images\project_img3.jpg" />
     <Content Include="Images\project_img6.jpg" />
+    <Content Include="Images\Slide\067.jpg" />
+    <Content Include="Images\Slide\banner-1.jpg" />
+    <Content Include="Images\Slide\slide-dog-10.jpg" />
+    <Content Include="Images\Slide\slide-image-2.jpg" />
+    <Content Include="Images\Slide\slide1.jpg" />
+    <Content Include="Images\Slide\slide3.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -352,10 +358,11 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_LayoutUser.cshtml" />
     <Content Include="Views\Pet\Index.cshtml" />
+    <Content Include="Views\Pet\Products.cshtml" />
+    <Content Include="Views\Pet\Category.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

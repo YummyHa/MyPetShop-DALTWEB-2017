@@ -12,7 +12,11 @@ namespace MyPetShop.Controllers
         {
             return RedirectToAction("Index", "Pet");
         }
-         // abcde
+        // abcde
+            public ActionResult Products()
+        {
+            return RedirectToAction("Products", "Pet");
+        }
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

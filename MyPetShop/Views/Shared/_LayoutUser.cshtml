@@ -1,5 +1,5 @@
-﻿<!DOCTYPE html>
-
+﻿@model MyPetShop.ViewModels.PetViewModel
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -26,13 +26,19 @@
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <script src="js/respond.min.js"></script>
     <![endif]-->
+    <style>
+        .slides img{
+            width:744px;
+            height:400px;
+        }
+    </style>
 </head>
 <body>
     <div id="top-bar" class="container">
         <div class="row">
             <div class="span4">
                 <form method="POST" class="search_form">
-                    <input type="text" class="input-block-level search-query" Placeholder="eg. T-sirt">
+                    <input type="text" class="input-block-level search-query" Placeholder="Search...">
                 </form>
             </div>
             <div class="span8">
@@ -50,41 +56,26 @@
     <div id="wrapper" class="container">
         <section class="navbar main-menu">
             <div class="navbar-inner main-menu">
-                <a href="index.html" class="logo pull-left"><img src="~/Images/logo.png" class="site_logo" alt=""></a>
+                <a href="@Url.Action("Index","Home")" class="logo pull-left"><img src="~/Images/logo.png" class="site_logo" alt=""></a>
                 <nav id="menu" class="pull-right">
                     <ul>
-                        <li>
-                            <a href="./products.html">Woman</a>
-                            <ul>
-                                <li><a href="./products.html">Lacinia nibh</a></li>
-                                <li><a href="./products.html">Eget molestie</a></li>
-                                <li><a href="./products.html">Varius purus</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="./products.html">Man</a></li>
-                        <li>
-                            <a href="./products.html">Sport</a>
-                            <ul>
-                                <li><a href="./products.html">Gifts and Tech</a></li>
-                                <li><a href="./products.html">Ties and Hats</a></li>
-                                <li><a href="./products.html">Cold Weather</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="./products.html">Hangbag</a></li>
-                        <li><a href="./products.html">Best Seller</a></li>
-                        <li><a href="./products.html">Top Seller</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Contact</a></li>
                     </ul>
                 </nav>
+                <!--show Category-->
+                @Html.Action("Category", "Pet")
+                
             </div>
         </section>
         <section class="homepage-slider" id="home-slider">
             <div class="flexslider">
                 <ul class="slides">
                     <li>
-                        <img src="~/Images/carousel/banner-1.jpg" alt="" />
+                        <img src="~/Images/Slide/slide3.jpg" alt="" />
                     </li>
                     <li>
-                        <img src="~/Images/carousel/banner-2.jpg" alt="" />
+                        <img src="~/Images/Slide/slide1.jpg" alt="" />
                         <div class="intro">
                             <h1>Mid season sale</h1>
                             <p><span>Up to 50% Off</span></p>

@@ -38,5 +38,29 @@ namespace MyPetShop.Controllers
 
             return View(viewModel);
         }
+
+        public ActionResult Category()
+        {
+            var view = new PetViewModel
+            {
+                Categories = _dbContext.Categories.ToList(),
+                CategoryPets = _dbContext.CategoryPets.ToList()
+            };
+
+            return PartialView(view);
+        }
+
+        public ActionResult Products(int id)
+        {
+            var viewProducts = new PetViewModel
+            {
+                Pets = _dbContext.Pets.Where(i => i.CategoryPetId == id).ToList(),
+                //lợi làm tới đây thôi, mệt vl, hình làm chưa ra
+                
+            };
+            return View(viewProducts);
+        }
+
+        
     }
 }

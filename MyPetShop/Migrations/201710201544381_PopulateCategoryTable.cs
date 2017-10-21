@@ -7,9 +7,9 @@ namespace MyPetShop.Migrations
     {
         public override void Up()
         {
-            Sql("INSERT INTO CATEGORIES (NAME) VALUES ('Cho')");
+            Sql("INSERT INTO CATEGORIES (NAME) VALUES ('Dog')");
 
-            Sql("INSERT INTO CATEGORIES (NAME) VALUES ('Meo')");
+            Sql("INSERT INTO CATEGORIES (NAME) VALUES ('Cat')");
         }
         
         public override void Down()

@@ -12,5 +12,10 @@ namespace MyPetShop.ViewModels
 
         public IEnumerable<PetImage> PetImages { get; set; }
 
+        public IEnumerable<Category> Categories { get; set; }
+
+        public IEnumerable<CategoryPet> CategoryPets { get; set; }
+
+
     }
 }
