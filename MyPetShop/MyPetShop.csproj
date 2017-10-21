@@ -220,6 +220,10 @@
     <Compile Include="Migrations\201710201640218_UpdateDescriptionCoulumnInPetsTable.Designer.cs">
       <DependentUpon>201710201640218_UpdateDescriptionCoulumnInPetsTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710211734489_EditCategoryIdInCategoryPetsTable.cs" />
+    <Compile Include="Migrations\201710211734489_EditCategoryIdInCategoryPetsTable.Designer.cs">
+      <DependentUpon>201710211734489_EditCategoryIdInCategoryPetsTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Category.cs" />
@@ -384,6 +388,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710201640218_UpdateDescriptionCoulumnInPetsTable.resx">
       <DependentUpon>201710201640218_UpdateDescriptionCoulumnInPetsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710211734489_EditCategoryIdInCategoryPetsTable.resx">
+      <DependentUpon>201710211734489_EditCategoryIdInCategoryPetsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
