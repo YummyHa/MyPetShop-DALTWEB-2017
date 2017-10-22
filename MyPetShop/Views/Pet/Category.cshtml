@@ -4,18 +4,16 @@
 
         @foreach (var category in Model.Categories)
         {
-            var name = "";
-
             <li>
-                <a href="">@category.Name</a>
+                @{ var cateName = category.Id == 1 ? "Chó" : "Mèo"; }
+                <a href="">@cateName</a>
                 <ul>
 
                     @foreach (var categoryPets in Model.CategoryPets)
                     {
                         if (categoryPets.CategoryId == category.Id)
                         {
-                            name = categoryPets.Name.ToString();
-                            <li><a href="@Url.Action("Products", "Pet", new { id = categoryPets.Id })">@name</a></li>
+                            <li><a href="@Url.Action("Products", "Pet", new {id = categoryPets.Id})">@categoryPets.Name</a></li>
                         }
                     }
                 </ul>

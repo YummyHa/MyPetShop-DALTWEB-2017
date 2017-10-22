@@ -442,9 +442,11 @@ section.navbar{
 .product-box:hover a{
 	color:#fff !important;
 }
-.product-box img{
-	overflow:hidden;
-}
+    .product-box img {
+        overflow: hidden;
+        height: 320px !important;
+        width: auto !important;
+    }
 .product-box a.title{
 	text-transform:uppercase;
 	color:#111111;

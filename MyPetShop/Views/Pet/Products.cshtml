@@ -4,7 +4,18 @@
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
 
+@foreach (var cate in Model.CategoryPets)
+{
+    <h2>@cate.Name</h2>
+    break;
+}
 
+<style>
+    .product-box img {
+        width: auto;
+        height: 320px;
+    }
+</style>
 
 <section class="main-content">
 
@@ -13,25 +24,27 @@
             <ul class="thumbnails listing-products">
                 @foreach (var pet in Model.Pets)
                 {
-                    //var image = "";
-                    //foreach (var petImage in Model.PetImages)
-                    //{
-                        //if (petImage.PetId == pet.Id)
-                        //{
-                            //image = petImage.Uri.ToString();
-                            <li class="span3">
-                                <div class="product-box">
-                                    <span class="sale_tag"></span>
-                                    <p>
-                                        <a href="product_detail.html"><img src="" alt="" /></a>
-                                    </p>
-                                    <a href="product_detail.html" class="title">@pet.Name</a><br />
-                                    <a href="products.html" class="">AGE: @pet.Age years</a>
-                                    <p class="price">$@pet.Price</p>
-                                </div>
-                            </li>
-                        //}
-                    //}
+                    var image = "";
+                    foreach (var petImage in Model.PetImages)
+                    {
+                        if (petImage.PetId == pet.Id)
+                        {
+                            image = petImage.Uri.ToString();
+                            break;
+                        }
+                    }
+
+                    <li class="span3">
+                        <div class="product-box">
+                            <span class="sale_tag"></span>
+                            <p>
+                                <a href="product_detail.html"><img src="@image" alt="" /></a>
+                            </p>
+                            <a href="product_detail.html" class="title">@pet.Name</a><br />
+                            <a href="products.html" class="">AGE: @pet.Age years</a>
+                            <p class="price">$@pet.Price</p>
+                        </div>
+                    </li>
                 }
                 
             </ul>
