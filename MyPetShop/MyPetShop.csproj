@@ -360,6 +360,8 @@
     <Content Include="Views\Pet\Index.cshtml" />
     <Content Include="Views\Pet\Products.cshtml" />
     <Content Include="Views\Pet\Category.cshtml" />
+    <Content Include="Views\Pet\ListCategory.cshtml" />
+    <Content Include="Views\Pet\ListOtherProducts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

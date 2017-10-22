@@ -1,0 +1,18 @@
+﻿@model MyPetShop.ViewModels.PetViewModel
+
+
+<ul class="nav nav-list">
+    @foreach (var category in Model.Categories)
+    {
+        <li class="nav-header">@category.Name</li>
+        foreach (var categoryPets in Model.CategoryPets)
+        {
+            if (categoryPets.CategoryId == category.Id)
+            {
+                //<li class="active"><a href="products.html">Phasellus ultricies</a></li>
+                <li><a href="@Url.Action("Products", "Pet", new {id = categoryPets.Id})">@categoryPets.Name</a></li>
+            }
+        }
+
+    }
+</ul>

@@ -16,6 +16,5 @@ namespace MyPetShop.ViewModels
 
         public IEnumerable<CategoryPet> CategoryPets { get; set; }
 
-
     }
 }
