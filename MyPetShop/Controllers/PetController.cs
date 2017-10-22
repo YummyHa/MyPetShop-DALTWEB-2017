@@ -55,7 +55,6 @@ namespace MyPetShop.Controllers
             var viewProducts = new PetViewModel
             {
                 Pets = _dbContext.Pets.Where(i => i.CategoryPetId == id).ToList(),
-                //lợi làm tới đây thôi, mệt vl, hình làm chưa ra
 
                 CategoryPets = _dbContext.CategoryPets.Where(c => c.Id == id).ToList(),
 
@@ -66,6 +65,15 @@ namespace MyPetShop.Controllers
             return View(viewProducts);
         }
 
-        
+        public ActionResult PetDetails(int id)
+        {
+            var viewModel = new PetViewModel
+            {
+                Pets = _dbContext.Pets.Where(p => p.Id == id).ToList(),
+                PetImages = _dbContext.PetImages.ToList(),
+            };
+
+            return View(viewModel);
+        }
     }
 }
