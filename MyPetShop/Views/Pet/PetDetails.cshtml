@@ -10,17 +10,17 @@
 <section class="main-content">
     <div class="row">
         <div class="span9">
-@foreach (var pet in Model.Pets)
-{
-    var image = "";
-    foreach (var petImage in Model.PetImages)
+    @foreach (var pet in Model.Pets)
     {
-        if (petImage.PetId == pet.Id)
+        var image = "";
+        foreach (var petImage in Model.PetImages)
         {
-            image = petImage.Uri.ToString();
-            break;
-        }
-    }  
+            if (petImage.PetId == pet.Id)
+            {
+                image = petImage.Uri.ToString();
+                break;
+            }
+        }  
              <div class="row">
                 <div class="span4">
                    
@@ -84,7 +84,7 @@
                     </div>
                 </div>
             </div>
-}
+    }
 
                 <div class="span9">
                     <br>
@@ -162,16 +162,15 @@
             </div>
                 <div class="span3 col">
             <div class="block">
-                <ul class="nav nav-list">
 
-                    <li class="nav-header">CATEGORIES</li>
+                <ul class="nav nav-list">
+                    <li class="nav-header">Chó</li>
                     <li><a href="products.html">Nullam semper elementum</a></li>
                     <li class="active"><a href="products.html">Phasellus ultricies</a></li>
                     <li><a href="products.html">Donec laoreet dui</a></li>
                     <li><a href="products.html">Nullam semper elementum</a></li>
                     <li><a href="products.html">Phasellus ultricies</a></li>
                     <li><a href="products.html">Donec laoreet dui</a></li>
-
                 </ul>
                 <br />
                 <ul class="nav nav-list below">
