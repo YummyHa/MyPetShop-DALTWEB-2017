@@ -5,7 +5,6 @@
 }
 
 @{ var i = 0; }
-@{ var j = 0; }
 <style>
     .product-box img{
         width: auto;
@@ -13,9 +12,10 @@
     }
 </style>
 <div class="row">
+    <br/>
     <div class="span12">
         <h4 class="title">
-            <span class="pull-left"><span class="text"><span class="line">Feature <strong>Dogs</strong></span></span></span>
+            <span class="pull-left"><span class="text"><span class="line">Feature <strong>Pets</strong></span></span></span>
             <span class="pull-right">
                 <a class="left button" href="#myCarousel" data-slide="prev"></a><a class="right button" href="#myCarousel" data-slide="next"></a>
             </span>
@@ -23,7 +23,7 @@
         <div id="myCarousel" class="myCarousel carousel slide">
             <div class="carousel-inner">
                 <div class="active item">
-                    <ul class="thumbnails">                           
+                    <ul class="thumbnails">
                         @foreach (var pet in Model.Pets)
                         {
                             var image = "";
@@ -35,7 +35,7 @@
                                     break;
                                 }
                             }
-                            if (i <= 3)
+                            if (i < 8)
                             {
                                 <li class="span3">
                                     <div class="product-box">
@@ -52,8 +52,8 @@
                             {
                                 break;
                             }
-                            i ++;
-                        }                  
+                            i++;
+                        }
                     </ul>
                 </div>
                 <div class="item">
@@ -70,7 +70,7 @@
                                     break;
                                 }
                             }
-                            if (i >= 4 && i <= 7)
+                            if (i >= 8 && i <= 15)
                             {
                                 <li class="span3">
                                     <div class="product-box">
@@ -95,89 +95,3 @@
         </div>
     </div>
 </div>
-<br />
-<div class="row">
-    <div class="span12">
-        <h4 class="title">
-            <span class="pull-left"><span class="text"><span class="line">Feature <strong>Cats</strong></span></span></span>
-            <span class="pull-right">
-                <a class="left button" href="#myCarousel-2" data-slide="prev"></a><a class="right button" href="#myCarousel-2" data-slide="next"></a>
-            </span>
-        </h4>
-        <div id="myCarousel-2" class="myCarousel carousel slide">
-            <div class="carousel-inner">
-                <div class="active item">
-                    <ul class="thumbnails">
-                        @foreach (var pet in Model.Pets)
-                        {
-                            if (j <= 3)
-                            {
-                                var image = "";
-                                foreach (var petImage in Model.PetImages)
-                                {
-                                    if (petImage.PetId == pet.Id)
-                                    {
-                                        image = petImage.Uri.ToString();
-                                        break;
-                                    }
-                                }
-                                <li class="span3">
-                                    <div class="product-box">
-                                        <span class="sale_tag"></span>
-                                        <p>
-                                            <a href="@Url.Action("PetDetails", "Pet", new {id = pet.Id})"><img src="@image" alt="" /></a>
-                                        </p>
-                                        <a href="@Url.Action("PetDetails", "Pet", new {id = pet.Id})" class="title">@pet.Name</a><br />
-                                        <a href="@Url.Action("Products", "Pet", new {id = pet.CategoryPetId})" class="">AGE: @pet.Age years</a>
-                                        <p class="price">$@pet.Price</p>
-                                    </div>
-                                </li>
-                            }
-                            else
-                            {
-                                break;
-                            }
-                            j++;
-
-                        }
-                        
-                    </ul>
-                </div>
-                <div class="item">
-                    @{ j = 0; }
-                    <ul class="thumbnails">
-                        @foreach (var pet in Model.Pets)
-                        {
-                            var image = "";
-                            foreach (var petImage in Model.PetImages)
-                            {
-                                if (petImage.PetId == pet.Id)
-                                {
-                                    image = petImage.Uri.ToString();
-                                    break;
-                                }
-                            }
-
-                            if (j >= 4 && j <= 7)
-                            {
-                                <li class="span3">
-                                    <div class="product-box">
-                                        <span class="sale_tag"></span>
-                                        <p>
-                                            <a href="@Url.Action("PetDetails", "Pet", new {id = pet.Id})"><img src="@image" alt=""/></a>
-                                        </p>
-                                        <a href="@Url.Action("PetDetails", "Pet", new {id = pet.Id})" class="title">@pet.Name</a><br/>
-                                        <a href="@Url.Action("Products", "Pet", new {id = pet.CategoryPetId})" class="">AGE: @pet.Age years</a>
-                                        <p class="price">$@pet.Price</p>
-                                    </div>
-                                </li>
-                            }
-                            j++;
-                        }
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-

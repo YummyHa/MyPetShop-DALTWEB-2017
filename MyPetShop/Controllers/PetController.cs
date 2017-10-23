@@ -28,12 +28,12 @@ namespace MyPetShop.Controllers
         // GET: Pet
         public ActionResult Index()
         {
-            var list = GetPets(10);
+            var list = GetPets(16);
 
             var viewModel = new PetViewModel
             {
                 PetImages = _dbContext.PetImages.ToList(),
-                Pets = _dbContext.Pets.ToList()
+                Pets = list,
             };
 
             return View(viewModel);
