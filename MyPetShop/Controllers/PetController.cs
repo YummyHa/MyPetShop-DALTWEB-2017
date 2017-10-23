@@ -17,30 +17,6 @@ namespace MyPetShop.Controllers
             _dbContext = new ApplicationDbContext();
         }
 
-        //private List<PetViewModel> ListCategoryPetDog(int quantity, int categoryid)
-        //{
-        //    var ListCategoryPetDog = from c in _dbContext.CategoryPets
-        //                             join p in _dbContext.Pets
-        //                             on c.Id equals p.CategoryPetId
-        //                             join i in _dbContext.PetImages
-        //                             on p.Id equals i.PetId
-        //                             where c.CategoryId == categoryid
-        //                             select new PetViewModel()
-        //                             {
-        //                                 Id = p.Id,
-        //                                 Name = p.Name,
-        //                                 Description = p.Description,
-        //                                 Age = p.Age,
-        //                                 Price = p.Price,
-        //                                 Status = p.Status,
-        //                                 CategoryId = c.Id,
-        //                                 Uri = i.Uri
-                                         
-        //                             };
-        //    ListCategoryPetDog.OrderByDescending(p => p.Id).Take(quantity);
-        //    return ListCategoryPetDog.ToList();
-        //}
-
         // Method get all 10 Pets
         private IEnumerable<Pet> GetPets(int quantity)
         {
@@ -65,14 +41,13 @@ namespace MyPetShop.Controllers
 
         public ActionResult Category()
         {
-            
-            var viewCategory = new PetViewModel
+            var view = new PetViewModel
             {
                 Categories = _dbContext.Categories.ToList(),
                 CategoryPets = _dbContext.CategoryPets.ToList()
             };
 
-            return PartialView(viewCategory);
+            return PartialView(view);
         }
 
         public ActionResult Products(int id)
@@ -80,7 +55,6 @@ namespace MyPetShop.Controllers
             var viewProducts = new PetViewModel
             {
                 Pets = _dbContext.Pets.Where(i => i.CategoryPetId == id).ToList(),
-                //lợi làm tới đây thôi, mệt vl, hình làm chưa ra
 
                 CategoryPets = _dbContext.CategoryPets.Where(c => c.Id == id).ToList(),
 
@@ -91,38 +65,18 @@ namespace MyPetShop.Controllers
             return View(viewProducts);
         }
 
-        public ActionResult ListCategory()
+        public ActionResult PetDetails(int id)
         {
-            var viewListCategory = new PetViewModel
+            var viewModel = new PetViewModel
             {
-                Categories = _dbContext.Categories.ToList(),
-                CategoryPets = _dbContext.CategoryPets.ToList()
+                Pets = _dbContext.Pets.Where(p => p.Id == id).ToList(),
+                PetImages = _dbContext.PetImages.ToList(),
             };
 
-            return PartialView(viewListCategory);
+            return View(viewModel);
         }
 
-        private IEnumerable<Pet> GetCategorypet(int quantity, int id)
-        {
-            // Order by lastest Id
-            return _dbContext.Pets.OrderByDescending(p => p.Id).Take(quantity).Where(s => s.CategoryPetId != id).ToList();
-        }
 
-        public ActionResult ListOtherProducts(int id)
-        {
-            var list = GetCategorypet(3,id);
-            var ListSimilarProducts = new PetViewModel
-            {
-                Pets = _dbContext.Pets.Where(i => i.CategoryPetId != id).ToList(),
-                //lợi làm tới đây thôi, mệt vl, hình làm chưa ra
-
-                CategoryPets = _dbContext.CategoryPets.Where(c => c.Id != id).ToList(),
-
-                // Get PetImages
-                PetImages = _dbContext.PetImages.ToList()
-            };
-
-            return PartialView(ListSimilarProducts);
-        }
+        //Changes
     }
 }
