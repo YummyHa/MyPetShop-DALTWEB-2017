@@ -5,10 +5,10 @@
         width: 255px;
         height: 320px;
     }
+
     .product-box {
         width: 255px;
     }
-
 </style>
 
 <div class="carousel-inner">
@@ -28,13 +28,13 @@
                 if (i < 1)
                 {
                     <li class="span3">
-                    <div class="product-box">
-                        <span class="sale_tag"></span>
-                        <img alt="" src="@image"><br />
-                        <a href="product_detail.html" class="title">@pet.Name</a><br />
-                        <a href="#" class="category">AGE: @pet.Age years</a>
-                        <p class="price">$@pet.Price</p>
-                    </div>
+                        <div class="product-box">
+                            <span class="sale_tag"></span>
+                            <img alt="" src="@image"><br />
+                            <a href="product_detail.html" class="title">@pet.Name</a><br />
+                            <a href="#" class="category">AGE: @pet.Age years</a>
+                            <p class="price">$@pet.Price</p>
+                        </div>
                     </li>
                 }
                 else
@@ -61,14 +61,14 @@
                 }
                 if (i == 1)
                 {
-                 <li class="span3">
-                    <div class="product-box">
-                        <img alt="" src="@image"><br />
-                        <a href="product_detail.html" class="title">@pet.Name</a><br />
-                        <a href="#" class="category">AGE: @pet.Age years</a>
-                        <p class="price">$@pet.Price</p>
-                    </div>
-                </li>
+                    <li class="span3">
+                        <div class="product-box">
+                            <img alt="" src="@image"><br />
+                            <a href="product_detail.html" class="title">@pet.Name</a><br />
+                            <a href="#" class="category">AGE: @pet.Age years</a>
+                            <p class="price">$@pet.Price</p>
+                        </div>
+                    </li>
                 }
                 i++;
 
@@ -76,3 +76,4 @@
         </ul>
     </div>
 </div>
+

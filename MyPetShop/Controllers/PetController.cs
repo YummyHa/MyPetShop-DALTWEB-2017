@@ -76,7 +76,39 @@ namespace MyPetShop.Controllers
             return View(viewModel);
         }
 
+        public ActionResult ListCategory()
+        {
+            var viewListCategory = new PetViewModel
+            {
+                Categories = _dbContext.Categories.ToList(),
+                CategoryPets = _dbContext.CategoryPets.ToList()
+            };
 
+            return PartialView(viewListCategory);
+        }
+
+        private IEnumerable<Pet> GetCategorypet(int quantity, int id)
+        {
+            // Order by lastest Id
+            return _dbContext.Pets.OrderByDescending(p => p.Id).Take(quantity).Where(s => s.CategoryPetId != id).ToList();
+        }
+
+        public ActionResult ListOtherProducts(int id)
+        {
+            var list = GetCategorypet(3, id);
+            var ListSimilarProducts = new PetViewModel
+            {
+                Pets = _dbContext.Pets.Where(i => i.CategoryPetId != id).ToList(),
+                //lợi làm tới đây thôi, mệt vl, hình làm chưa ra
+
+                CategoryPets = _dbContext.CategoryPets.Where(c => c.Id != id).ToList(),
+
+                // Get PetImages
+                PetImages = _dbContext.PetImages.ToList()
+            };
+
+            return PartialView(ListSimilarProducts);
+        }
         //Changes
     }
 }
