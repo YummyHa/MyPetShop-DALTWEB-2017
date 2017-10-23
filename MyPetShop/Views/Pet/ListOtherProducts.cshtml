@@ -1,77 +1,66 @@
-﻿@model MyPetShop.ViewModels.PetViewModel
-@{ var i = 0; }
+﻿@using MyPetShop.Models
+@model MyPetShop.ViewModels.PetViewModel
+
 <style>
     .product-box img {
-        width: 255px;
+        width: auto;
         height: 320px;
     }
-
-    .product-box {
-        width: 255px;
-    }
 </style>
+
+@{
+    var list = Model.Pets.ToList();
+}
+
 
 <div class="carousel-inner">
     <div class="active item">
         <ul class="thumbnails listing-products">
-            @foreach (var pet in Model.Pets)
-            {
-                var image = "";
+            @{
+                var image1 = "";
                 foreach (var petImage in Model.PetImages)
                 {
-                    if (petImage.PetId == pet.Id)
+                    if (petImage.PetId == list[1].Id)
                     {
-                        image = petImage.Uri.ToString();
+                        image1 = petImage.Uri.ToString();
                         break;
                     }
                 }
-                if (i < 1)
-                {
-                    <li class="span3">
-                        <div class="product-box">
-                            <span class="sale_tag"></span>
-                            <img alt="" src="@image"><br />
-                            <a href="product_detail.html" class="title">@pet.Name</a><br />
-                            <a href="#" class="category">AGE: @pet.Age years</a>
-                            <p class="price">$@pet.Price</p>
-                        </div>
-                    </li>
-                }
-                else
-                {
-                    break;
-                }
-                i++;
+
+                <li class="span3">
+                    <div class="product-box">
+                        <span class="sale_tag"></span>
+                        <img alt="" src="@image1"><br />
+                        <a href="@Url.Action("PetDetails", "Pet", new { id = list[1].Id})" class="title">@list[1].Name</a><br />
+                        <a href="#" class="category">AGE: @list[1].Age years</a>
+                        <p class="price">$@list[1].Price</p>
+                    </div>
+                </li>
             }
         </ul>
     </div>
     <div class="item">
-        @{ i = 0; }
         <ul class="thumbnails listing-products">
-            @foreach (var pet in Model.Pets)
-            {
-                var image = "";
+            @{
+                var image2 = "";
                 foreach (var petImage in Model.PetImages)
                 {
-                    if (petImage.PetId == pet.Id)
+                    if (petImage.PetId == list[0].Id)
                     {
-                        image = petImage.Uri.ToString();
+                        image2 = petImage.Uri.ToString();
                         break;
                     }
                 }
-                if (i == 1)
-                {
-                    <li class="span3">
-                        <div class="product-box">
-                            <img alt="" src="@image"><br />
-                            <a href="product_detail.html" class="title">@pet.Name</a><br />
-                            <a href="#" class="category">AGE: @pet.Age years</a>
-                            <p class="price">$@pet.Price</p>
-                        </div>
-                    </li>
-                }
-                i++;
 
+                <li class="span3">
+                    <div class="product-box">
+                        <span class="sale_tag"></span>
+                        <img alt="" src="@image2"><br />
+                        <a href="@Url.Action("PetDetails", "Pet", new { id = list[1].Id})" class="title">@list[0].Name</a><br />
+                        <a href="#" class="category">AGE: @list[0].Age years</a>
+                        <p class="price">$@list[0].Price</p>
+                    </div>
+                </li>
             }
         </ul>
     </div>

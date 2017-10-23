@@ -87,28 +87,22 @@ namespace MyPetShop.Controllers
             return PartialView(viewListCategory);
         }
 
-        private IEnumerable<Pet> GetCategorypet(int quantity, int id)
+        private IEnumerable<Pet> GetRandomPets(int quantity)
         {
-            // Order by lastest Id
-            return _dbContext.Pets.OrderByDescending(p => p.Id).Take(quantity).Where(s => s.CategoryPetId != id).ToList();
+            return _dbContext.Pets.OrderBy(p => Guid.NewGuid()).Take(quantity).ToList();
         }
 
         public ActionResult ListOtherProducts(int id)
         {
-            var list = GetCategorypet(3, id);
-            var ListSimilarProducts = new PetViewModel
+            var list = GetRandomPets(2);
+            var viewModel = new PetViewModel
             {
-                Pets = _dbContext.Pets.Where(i => i.CategoryPetId != id).ToList(),
-                //lợi làm tới đây thôi, mệt vl, hình làm chưa ra
-
+                Pets = list,
                 CategoryPets = _dbContext.CategoryPets.Where(c => c.Id != id).ToList(),
-
-                // Get PetImages
                 PetImages = _dbContext.PetImages.ToList()
             };
 
-            return PartialView(ListSimilarProducts);
+            return PartialView(viewModel);
         }
-        //Changes
     }
 }
