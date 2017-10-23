@@ -104,5 +104,16 @@ namespace MyPetShop.Controllers
 
             return PartialView(viewModel);
         }
+
+        public ActionResult RelatedPets(int petId)
+        {
+            var viewModel = new PetViewModel
+            {
+                Pets = _dbContext.Pets.Where(p => p.Id != petId).OrderBy(p => Guid.NewGuid()).Take(6).ToList(),
+                PetImages = _dbContext.PetImages.ToList()
+            };
+
+            return PartialView(viewModel);
+        }
     }
 }

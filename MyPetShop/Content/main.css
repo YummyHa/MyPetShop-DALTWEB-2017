@@ -777,4 +777,9 @@ section.our_client .row{
 	.feature_box .service{	
 		border-bottom:1px solid #eee;
 	}
+
+}
+
+.petdetail {
+    font-size: 18px;
 }

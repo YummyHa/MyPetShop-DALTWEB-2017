@@ -363,6 +363,7 @@
     <Content Include="Views\Pet\PetDetails.cshtml" />
     <Content Include="Views\Pet\ListCategory.cshtml" />
     <Content Include="Views\Pet\ListOtherProducts.cshtml" />
+    <Content Include="Views\Pet\RelatedPets.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

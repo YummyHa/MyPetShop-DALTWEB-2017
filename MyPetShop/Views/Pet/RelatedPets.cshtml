@@ -1,0 +1,76 @@
+﻿@model MyPetShop.ViewModels.PetViewModel
+
+@{ var i = 0; }
+
+<div class="carousel-inner">
+    <div class="active item">
+        <ul class="thumbnails listing-products">
+            @foreach (var pet in Model.Pets)
+            {
+                var image = "";
+                foreach (var petImage in Model.PetImages)
+                {
+                    if (petImage.PetId == pet.Id)
+                    {
+                        image = petImage.Uri.ToString();
+                        break;
+                    }
+                }
+
+                if (i < 3)
+                {
+                    <li class="span3">
+                        <div class="product-box">
+                            <span class="sale_tag"></span>
+                            <p>
+                                <a href="@Url.Action("PetDetails", "Pet", new {id = pet.Id})"><img src="@image" alt="" /></a>
+                            </p>
+                            <a href="product_detail.html" class="title">@pet.Name</a><br />
+                            <a href="@Url.Action("Products", "Pet", new {id = pet.CategoryPetId})" class="">AGE: @pet.Age years</a>
+                            <p class="price">$@pet.Price</p>
+                        </div>
+                    </li>
+                }
+                else
+                {
+                    break;
+                }
+                i++;
+            }
+        </ul>
+    </div>
+    <div class="item">
+        <ul class="thumbnails listing-products">
+            @{ i = 0; }
+            @foreach (var pet in Model.Pets)
+            {
+                var image = "";
+                foreach (var petImage in Model.PetImages)
+                {
+                    if (petImage.PetId == pet.Id)
+                    {
+                        image = petImage.Uri.ToString();
+                        break;
+                    }
+                }
+
+                if (i < 6 && i > 2)
+                {
+                    <li class="span3">
+                        <div class="product-box">
+                            <span class="sale_tag"></span>
+                            <p>
+                                <a href="@Url.Action("PetDetails", "Pet", new {id = pet.Id})"><img src="@image" alt=""/></a>
+                            </p>
+                            <a href="product_detail.html" class="title">@pet.Name</a><br/>
+                            <a href="@Url.Action("Products", "Pet", new {id = pet.CategoryPetId})" class="">AGE: @pet.Age years</a>
+                            <p class="price">$@pet.Price</p>
+                        </div>
+                    </li>
+                }
+
+                i++;
+            }
+        </ul>
+    </div>
+</div>

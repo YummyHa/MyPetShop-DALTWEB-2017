@@ -10,18 +10,19 @@
     <!-- bootstrap -->
     <link href="~/Content/bootstrap.min.css" rel="stylesheet">
     <link href="~/Content/bootstrap-responsive.min.css" rel="stylesheet">
-
-    <link href="~/Content/bootstrappage.css" rel="stylesheet"/>
+    <link href="~/Content/bootstrappage.css" rel="stylesheet" />
 
     <!-- global styles -->
     <link href="~/Content/flexslider.css" rel="stylesheet"/>
     <link href="~/Content/main.css" rel="stylesheet"/>
+    <link href="~/Content/jquery.fancybox.css" rel="stylesheet" />
 
     <!-- scripts -->
     <script src="~/Scripts/jquery-1.7.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/Scripts/superfish.js"></script>
     <script src="~/Scripts/jquery.scrolltotop.js"></script>
+    <script src="~/Scripts/jquery.fancybox.js"></script>
     <!--[if lt IE 9]>
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <script src="js/respond.min.js"></script>
@@ -47,7 +48,7 @@
                         <li><a href="#">My Account</a></li>
                         <li><a href="cart.html">Your Cart</a></li>
                         <li><a href="checkout.html">Checkout</a></li>
-                        <li><a href="register.html">Login</a></li>
+                        <li><a href="@Url.Action("Login", "Account")">Login</a></li>
                     </ul>
                 </div>
             </div>
