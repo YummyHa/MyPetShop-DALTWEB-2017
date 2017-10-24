@@ -115,5 +115,71 @@ namespace MyPetShop.Controllers
 
             return PartialView(viewModel);
         }
+
+        // Method Add Pet to Cart
+        [HttpPost]
+        [Authorize]
+        public JsonResult AddToCart(int id, int quantity)
+        {
+            List<CartItem> listCartItem;
+            if (Session["ShoppingCart"] == null)
+            {
+                listCartItem = new List<CartItem>
+                {
+                    new CartItem
+                    {
+                        Quantity = quantity,
+                        Pet = _dbContext.Pets.Find(id),
+                        Image = _dbContext.PetImages.Single(m => m.PetId == id).ToString(),
+                    }
+                };
+
+                Session["ShoppingCart"] = listCartItem;
+            }
+            else
+            {
+                var flag = false;
+                listCartItem = (List<CartItem>) Session["ShoppingCart"];
+                foreach (var cartItem in listCartItem)
+                {
+                    if (cartItem.Pet.Id != id) continue;
+                    cartItem.Quantity += quantity;
+                    flag = true;
+                    break;
+                }
+                if (!flag)
+                {
+                    listCartItem.Add(new CartItem
+                    {
+                        Quantity = quantity,
+                        Pet = _dbContext.Pets.Find(id),
+                        Image = _dbContext.PetImages.Single(m => m.PetId == id).ToString(),
+                    });
+                }
+                Session["ShoppingCart"] = listCartItem;
+            }
+
+            // Count number of Items in Shopping Cart
+            var list = (List<CartItem>) Session["ShoppingCart"];
+            var cartCount = list.Sum(item => item.Quantity);
+            return Json(new {ItemAmount = cartCount});
+        }
+
+        public ActionResult GetShoppingCart()
+        {
+            var cartCount = 0;
+            if (Session["ShoppingCart"] == null) return PartialView("ShoppingCartPartial", cartCount);
+
+            var list = (List<CartItem>) Session["ShoppingCart"];
+            cartCount += list.Sum(item => item.Quantity);
+
+            return PartialView("ShoppingCartPartial", cartCount);
+        }
+
+        public ActionResult ListCartItem()
+        {
+            return View();
+        }
+
     }
 }

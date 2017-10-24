@@ -226,6 +226,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\CartItem.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\CategoryPet.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -364,6 +365,8 @@
     <Content Include="Views\Pet\ListCategory.cshtml" />
     <Content Include="Views\Pet\ListOtherProducts.cshtml" />
     <Content Include="Views\Pet\RelatedPets.cshtml" />
+    <Content Include="Views\Pet\ShoppingCartPartial.cshtml" />
+    <Content Include="Views\Pet\ListCartItem.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

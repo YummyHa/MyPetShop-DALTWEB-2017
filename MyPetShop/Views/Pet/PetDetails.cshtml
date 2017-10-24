@@ -1,4 +1,5 @@
-﻿@model MyPetShop.ViewModels.PetViewModel
+﻿@using System.Collections.Specialized
+@model MyPetShop.ViewModels.PetViewModel
 
 @{
     ViewBag.Title = "PetDetails";
@@ -44,14 +45,14 @@
                             <form class="form-inline">
                                 <br />
                                 <label class="petdetail">Qty:</label>
-                                <input type="text" class="span1" placeholder="1">
-                                <button class="btn btn-inverse" type="submit">Add to cart</button>
+                                <input type="number" class="span1" placeholder="1" id="quantity">
+                                <button class="btn btn-inverse" type="submit" value="add to cart" onclick="AddToCart(@pet.Id)">Add to cart</button>
                             </form>
                         </div>
                     </div>
 
                 <div class="row">
-                    @* This is tab description *@
+                    <!--This is tab description--> 
                     <div class="span9">
                         <ul class="nav nav-tabs" id="myTab">
                             <li class="active"><a href="#home">Description</a></li>
@@ -59,9 +60,8 @@
                         <div class="tab-content">
                             <div class="tab-pane active" id="home">@pet.Description</div>
                         </div>
-                    </div>
-                    
-                    @* This is Related Product *@
+                    </div>                  
+                    <!--This is Related Product-->
                     <div class="span9">
                         <br>
                         <h4 class="title">
@@ -124,3 +124,23 @@
         });								
     });
 </script>
+
+
+@section Scripts {
+
+    <!--Cart-->
+    <script>
+        function AddToCart(id) {
+            var qty = $('#quantity').val();
+            $.ajax({
+                type: 'POST',
+                url: '/Pet/AddToCart',
+                data: { id: id, quantity: qty},
+                success: function(data) {
+                    location.reload();
+                }
+            });
+        }
+    </script>
+
+}

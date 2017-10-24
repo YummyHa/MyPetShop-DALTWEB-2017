@@ -15,7 +15,7 @@
                     <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
                 </ul>
             </li>         
-            <li><a href="#">Your Cart</a></li>
+            <li>@{ Html.RenderAction("GetShoppingCart", "Pet"); }</li>
             <li><a href="#">Checkout</a></li>	
         </ul>
     }

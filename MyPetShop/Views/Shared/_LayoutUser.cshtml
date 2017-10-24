@@ -23,6 +23,7 @@
     <script src="~/Scripts/superfish.js"></script>
     <script src="~/Scripts/jquery.scrolltotop.js"></script>
     <script src="~/Scripts/jquery.fancybox.js"></script>
+
     <!--[if lt IE 9]>
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <script src="js/respond.min.js"></script>
@@ -44,143 +45,93 @@
             </div>
             <div class="span8">
                 <div class="account pull-right">
-                    @Html.Partial("_LoginPartial")
+                    @Html.Partial("_LoginPartial")                    
                 </div>
             </div>
         </div>
     </div>
-    <div id="wrapper" class="container">
-        <section class="navbar main-menu">
-            <div class="navbar-inner main-menu">
-                <a href="@Url.Action("Index","Home")" class="logo pull-left"><img src="~/Images/logo.png" class="site_logo" alt=""></a>
-                <nav id="menu" class="pull-right">
-                    <ul>
-                        <li><a href="">About</a></li>
-                        <li><a href="">Contact</a></li>
-                    </ul>
-                </nav>
-                <!--show Category-->
-                @Html.Action("Category", "Pet")
+<div id="wrapper" class="container">
+    <section class="navbar main-menu">
+        <div class="navbar-inner main-menu">
+            <a href="@Url.Action("Index","Home")" class="logo pull-left"><img src="~/Images/logo.png" class="site_logo" alt=""></a>
+            <nav id="menu" class="pull-right">
+                <ul>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+            </nav>
+            <!--show Category-->
+            @Html.Action("Category", "Pet")
                 
+        </div>
+    </section>
+    <section class="homepage-slider" id="home-slider">
+        <div class="flexslider">
+            <ul class="slides">
+                <li>
+                    <img src="~/Images/Slide/slide3.jpg" alt="" />
+                </li>
+                <li>
+                    <img src="~/Images/Slide/slide1.jpg" alt="" />
+                    <div class="intro">
+                        <h1>Hãy nhận nuôi một chú chó</h1>
+                        <p><span>Người yêu có thể không có</span></p>
+                        <p><span>Nhưng chó nhất định phải có một con!!</span></p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    
+    <section class="main-content">
+        <div class="row">
+            <div class="span12">
+                <div>
+                    @RenderBody()                        
+                </div>
             </div>
-        </section>
-        <section class="homepage-slider" id="home-slider">
-            <div class="flexslider">
-                <ul class="slides">
-                    <li>
-                        <img src="~/Images/Slide/slide3.jpg" alt="" />
-                    </li>
-                    <li>
-                        <img src="~/Images/Slide/slide1.jpg" alt="" />
-                        <div class="intro">
-                            <h1>Hãy nhận nuôi một chú chó</h1>
-                            <p><span>Người yêu có thể không có</span></p>
-                            <p><span>Nhưng chó nhất định phải có một con!!</span></p>
-                        </div>
-                    </li>
+        </div>      
+    </section>     
+        
+    <section id="footer-bar">
+        <div class="row">
+            <div class="span3">
+                <h4>Navigation</h4>
+                <ul class="nav">
+                    <li><a href="./index.html">Homepage</a></li>
+                    <li><a href="./about.html">About Us</a></li>
+                    <li><a href="./contact.html">Contac Us</a></li>
+                    <li><a href="./cart.html">Your Cart</a></li>
+                    <li><a href="./register.html">Login</a></li>
                 </ul>
             </div>
-        </section>
-    
-        <section class="main-content">
-            <div class="row">
-                <div class="span12">
-                    <div>
-                        @RenderBody()
-                    </div>
-                    <div class="row feature_box">
-                        <div class="span4">
-                            <div class="service">
-                                <div class="responsive">
-                                    <img src="~/Images/feature_img_2.png" alt="" />
-                                    <h4>MODERN <strong>DESIGN</strong></h4>
-                                    <p>Lorem Ipsum is simply dummy text of the printing and printing industry unknown printer.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="span4">
-                            <div class="service">
-                                <div class="customize">
-                                    <img src="~/Images/feature_img_1.png" alt="" />
-                                    <h4>FREE <strong>SHIPPING</strong></h4>
-                                    <p>Lorem Ipsum is simply dummy text of the printing and printing industry unknown printer.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="span4">
-                            <div class="service">
-                                <div class="support">
-                                    <img src="~/Images/feature_img_3.png" alt="" />
-                                    <h4>24/7 LIVE <strong>SUPPORT</strong></h4>
-                                    <p>Lorem Ipsum is simply dummy text of the printing and printing industry unknown printer.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="span4">
+                <h4>My Account</h4>
+                <ul class="nav">
+                    <li><a href="#">My Account</a></li>
+                    <li><a href="#">Order History</a></li>
+                    <li><a href="#">Wish List</a></li>
+                    <li><a href="#">Newsletter</a></li>
+                </ul>
             </div>
-        </section>
-        <section class="our_client">
-            <h4 class="title"><span class="text">Manufactures</span></h4>
-            <div class="row">
-                <div class="span2">
-                    <a href="#"><img alt="" src="~/Images/clients/14.png"></a>
-                </div>
-                <div class="span2">
-                    <a href="#"><img alt="" src="~/Images/clients/35.png"></a>
-                </div>
-                <div class="span2">
-                    <a href="#"><img alt="" src="~/Images/clients/1.png"></a>
-                </div>
-                <div class="span2">
-                    <a href="#"><img alt="" src="~/Images/clients/2.png"></a>
-                </div>
-                <div class="span2">
-                    <a href="#"><img alt="" src="~/Images/clients/3.png"></a>
-                </div>
-                <div class="span2">
-                    <a href="#"><img alt="" src="~/Images/clients/4.png"></a>
-                </div>
+            <div class="span5">
+                <p class="logo"><img src="~/Images/logo.png" class="site_logo" alt=""></p>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. the  Lorem Ipsum has been the industry's standard dummy text ever since the you.</p>
+                <br />
+                <span class="social_icons">
+                    <a class="facebook" href="#">Facebook</a>
+                    <a class="twitter" href="#">Twitter</a>
+                    <a class="skype" href="#">Skype</a>
+                    <a class="vimeo" href="#">Vimeo</a>
+                </span>
             </div>
-        </section>
-        <section id="footer-bar">
-            <div class="row">
-                <div class="span3">
-                    <h4>Navigation</h4>
-                    <ul class="nav">
-                        <li><a href="./index.html">Homepage</a></li>
-                        <li><a href="./about.html">About Us</a></li>
-                        <li><a href="./contact.html">Contac Us</a></li>
-                        <li><a href="./cart.html">Your Cart</a></li>
-                        <li><a href="./register.html">Login</a></li>
-                    </ul>
-                </div>
-                <div class="span4">
-                    <h4>My Account</h4>
-                    <ul class="nav">
-                        <li><a href="#">My Account</a></li>
-                        <li><a href="#">Order History</a></li>
-                        <li><a href="#">Wish List</a></li>
-                        <li><a href="#">Newsletter</a></li>
-                    </ul>
-                </div>
-                <div class="span5">
-                    <p class="logo"><img src="~/Images/logo.png" class="site_logo" alt=""></p>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. the  Lorem Ipsum has been the industry's standard dummy text ever since the you.</p>
-                    <br />
-                    <span class="social_icons">
-                        <a class="facebook" href="#">Facebook</a>
-                        <a class="twitter" href="#">Twitter</a>
-                        <a class="skype" href="#">Skype</a>
-                        <a class="vimeo" href="#">Vimeo</a>
-                    </span>
-                </div>
-            </div>
-        </section>
-        <section id="copyright">
-            <span>Copyright 2013 bootstrappage template  All right reserved.</span>
-        </section>
-    </div>
+        </div>
+    </section>
+    <section id="copyright">
+        <span>Copyright 2017</span>
+    </section>
+</div>
+
     <script src="~/Scripts/common.js"></script>
     <script src="~/Scripts/jquery.flexslider-min.js"></script>
     <script type="text/javascript">
@@ -197,5 +148,8 @@
             });
         });
     </script>
+    
+    @RenderSection("Scripts", required: false)
+
 </body>
 </html>
