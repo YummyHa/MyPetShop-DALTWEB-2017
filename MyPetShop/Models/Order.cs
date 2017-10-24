@@ -20,11 +20,9 @@ namespace MyPetShop.Models
         [Required]
         public int Status { get; set; }
 
-        [ForeignKey("IdentityUser")]
-        [Required]
-        public int UserId { get; set; }
+        public ApplicationUser User { get; set; }
 
-        public IdentityUser IdentityUser { get; set; }
+        public string UserId { get; set; }
 
     }
 }

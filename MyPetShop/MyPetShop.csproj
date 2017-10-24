@@ -228,6 +228,10 @@
     <Compile Include="Migrations\201710241920020_UpdateUserModel.Designer.cs">
       <DependentUpon>201710241920020_UpdateUserModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710242033497_CreateOrderAndOrderDetailModels.cs" />
+    <Compile Include="Migrations\201710242033497_CreateOrderAndOrderDetailModels.Designer.cs">
+      <DependentUpon>201710242033497_CreateOrderAndOrderDetailModels.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CartItem.cs" />
@@ -414,6 +418,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710241920020_UpdateUserModel.resx">
       <DependentUpon>201710241920020_UpdateUserModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710242033497_CreateOrderAndOrderDetailModels.resx">
+      <DependentUpon>201710242033497_CreateOrderAndOrderDetailModels.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
