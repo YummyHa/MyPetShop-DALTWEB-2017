@@ -364,6 +364,7 @@
     <Content Include="Views\Pet\ListCategory.cshtml" />
     <Content Include="Views\Pet\ListOtherProducts.cshtml" />
     <Content Include="Views\Pet\RelatedPets.cshtml" />
+    <Content Include="Views\Pet\YourCart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
