@@ -181,5 +181,41 @@ namespace MyPetShop.Controllers
             return View();
         }
 
+        // Remove pet in CartList
+        [HttpPost]
+        [Authorize]
+        public JsonResult RemoveFromCart(int id)
+        {
+            if (Session["ShoppingCart"] == null) return Json(new {ItemAmount = 0});
+            var listCartItem = (List<CartItem>)Session["ShoppingCart"];
+
+            // Remove pet that have this id in listCartItem
+            listCartItem.RemoveAll(x => x.Pet.Id == id);
+
+            Session["ShoppingCart"] = listCartItem;
+
+            return Json(new { ItemAmount = 0 });
+        }
+
+        // Change Pet's Quantity in CartList
+        [Authorize]
+        [HttpPost]
+        public JsonResult UpdateCartItem(int id, int quantity)
+        {
+            if (Session["ShoppingCart"] == null) return Json(new {something = 0});
+
+            var listCartItems = (List<CartItem>)Session["ShoppingCart"];
+
+            foreach (var cartItem in listCartItems)
+            {
+                if (cartItem.Pet.Id != id) continue;
+                cartItem.Quantity = quantity;
+                break;
+            }
+
+            Session["ShoppingCart"] = listCartItems;
+            return Json(new {something = 0});
+        }
+
     }
 }
