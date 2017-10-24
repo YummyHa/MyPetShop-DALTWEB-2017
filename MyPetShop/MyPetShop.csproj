@@ -224,6 +224,10 @@
     <Compile Include="Migrations\201710211734489_EditCategoryIdInCategoryPetsTable.Designer.cs">
       <DependentUpon>201710211734489_EditCategoryIdInCategoryPetsTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710241920020_UpdateUserModel.cs" />
+    <Compile Include="Migrations\201710241920020_UpdateUserModel.Designer.cs">
+      <DependentUpon>201710241920020_UpdateUserModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CartItem.cs" />
@@ -231,6 +235,8 @@
     <Compile Include="Models\CategoryPet.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderDetail.cs" />
     <Compile Include="Models\Pet.cs" />
     <Compile Include="Models\PetImage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -405,6 +411,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710211734489_EditCategoryIdInCategoryPetsTable.resx">
       <DependentUpon>201710211734489_EditCategoryIdInCategoryPetsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710241920020_UpdateUserModel.resx">
+      <DependentUpon>201710241920020_UpdateUserModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
