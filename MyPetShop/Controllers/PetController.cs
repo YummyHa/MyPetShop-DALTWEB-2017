@@ -130,7 +130,7 @@ namespace MyPetShop.Controllers
                     {
                         Quantity = quantity,
                         Pet = _dbContext.Pets.Find(id),
-                        Image = _dbContext.PetImages.Single(m => m.PetId == id).ToString(),
+                        Image = _dbContext.PetImages.Single(m => m.PetId == id).Uri.ToString(),
                     }
                 };
 
@@ -153,7 +153,7 @@ namespace MyPetShop.Controllers
                     {
                         Quantity = quantity,
                         Pet = _dbContext.Pets.Find(id),
-                        Image = _dbContext.PetImages.Single(m => m.PetId == id).ToString(),
+                        Image = _dbContext.PetImages.Single(m => m.PetId == id).Uri.ToString(),
                     });
                 }
                 Session["ShoppingCart"] = listCartItem;
