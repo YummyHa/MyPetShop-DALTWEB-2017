@@ -28,6 +28,30 @@
                     </div>
                     
                     <div class="control-group">
+                        @Html.LabelFor(m => m.Name, new { @class = "control-label" })
+                        <div class="controls">
+                            @Html.TextBoxFor(m => m.Name, new { @class = "input-xlarge", @placeholder = "enter your name" })
+                            @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    
+                    <div class="control-group">
+                        @Html.LabelFor(m => m.DayOfBirth, new { @class = "control-label" })
+                        <div class="controls">
+                            @Html.TextBoxFor(m => m.DayOfBirth, new { @class = "input-xlarge", @placeholder = "enter your birthday" })
+                            @Html.ValidationMessageFor(m => m.DayOfBirth, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    
+                    <div class="control-group">
+                        @Html.LabelFor(m => m.Address, new { @class = "control-label" })
+                        <div class="controls">
+                            @Html.TextBoxFor(m => m.Address, new { @class = "input-xlarge", @placeholder = "enter your address" })
+                            @Html.ValidationMessageFor(m => m.Address, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    
+                    <div class="control-group">
                         @Html.LabelFor(m => m.Password, new { @class = "control-label" })
                         <div class="controls">
                             @Html.PasswordFor(m => m.Password, new { @class = "input-xlarge", @placeholder = "enter your password" })

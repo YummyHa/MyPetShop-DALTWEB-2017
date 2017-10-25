@@ -34,10 +34,13 @@
                 {
                     total += (item.Quantity * item.Pet.Price);
                     <tr>
-                        <td><input type="checkbox" value="option1"></td>
+                        <td><button type="button" class="btn" onclick="RemoveFromCart(@item.Pet.Id)">remove</button></td>
                         <td><a href="@Url.Action("PetDetails", "Pet", new { id = item.Pet.Id} )"><img class="cartimg" alt="" src="@item.Image"></a></td>
                         <td>@item.Pet.Name</td>
-                        <td><input type="text" placeholder="@item.Quantity" class="input-mini"></td>
+                        <td><input type="text" placeholder="@item.Quantity" id="quantity_@item.Pet.Id" class="input-mini">
+                            <br/>
+                            <button type="button" class="btn btn-inverse" onclick="UpdateCartItem(@item.Pet.Id)">Update</button>
+                        </td>
                         <td>$ @item.Pet.Price</td>
                         <td>$ @(item.Quantity * item.Pet.Price)</td>
                     </tr>
@@ -55,9 +58,8 @@
         </table>
 
         <p class="buttons center">
-            <button class="btn" type="button">Update</button>
-            <button class="btn" type="button">Continue</button>
-            <button class="btn btn-inverse" type="submit" id="checkout">Checkout</button>
+            <a type="button" class="btn" href="@Url.Action("Index", "Pet")">Continue</a>
+            <a type="button" class="btn btn-inverse" href="#">Checkout</a>
         </p>
     </div>
     
@@ -83,3 +85,35 @@
     <!--end menu-->
 
 </div>
+
+@section Scripts
+{
+    <script>
+        function RemoveFromCart(id) {
+            $.ajax({
+                type: 'POST',
+                url: '/Pet/RemoveFromCart',
+                data: { id: id },
+                success: function() {
+                    location.reload();
+                }
+            });
+        }
+    </script>
+    
+    <script>
+        function UpdateCartItem(id) {
+            event.preventDefault();
+            var qty = $('#quantity_'+id).val();
+            $.ajax({
+                type: 'POST',
+                url: '/Pet/UpdateCartItem',
+                data: { id: id, quantity: qty },
+                success: function () {
+                    location.reload();
+                }
+                
+            });
+        }
+    </script>
+}
