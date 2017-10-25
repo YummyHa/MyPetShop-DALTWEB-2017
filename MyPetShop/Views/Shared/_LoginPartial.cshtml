@@ -16,7 +16,7 @@
                 </ul>
             </li>         
             <li>@{ Html.RenderAction("GetShoppingCart", "Pet"); }</li>
-            <li><a href="#">Checkout</a></li>	
+            <li><a href="@Url.Action("PlaceOrder","CheckOut")">Checkout</a></li>	
         </ul>
     }
 }

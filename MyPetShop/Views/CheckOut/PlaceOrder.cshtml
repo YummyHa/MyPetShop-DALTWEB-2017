@@ -1,0 +1,41 @@
+﻿@model MyPetShop.ViewModels.CheckOutViewModel
+@{
+    ViewBag.Title = "PlaceOrder";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<section class="main-content">
+    <div class="row">
+        <div class="span5" style="padding-left: 30px">
+            <h4 class="title"><span class="text"><strong>Place</strong> Order</span></h4>
+
+            @using (Html.BeginForm("PlaceOrder", "CheckOut"))
+            {
+                <div class="control-group">
+                    @Html.LabelFor(m => m.Name, new { @class = "control-label" })
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.Name, new { @class = "input-xlarge", @value = @Model.Name })
+                    </div>
+                </div>
+            
+                <div class="control-group">
+                    @Html.LabelFor(m => m.Address, new { @class = "control-label" })
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.Address, new { @class = "input-xlarge", @value = @Model.Address })
+                    </div>
+                </div>
+            
+                <div class="control-group">
+                    @Html.LabelFor(m => m.Phone, new { @class = "control-label" })
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.Phone, new { @class = "input-xlarge", @value = @Model.Phone })
+                    </div>
+                </div>
+            
+                <br/>
+                <button type="submit" value="Confirm" class="btn btn-inverse">Confirm Order</button>
+            }
+
+        </div>
+    </div>
+</section>
