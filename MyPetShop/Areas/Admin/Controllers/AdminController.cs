@@ -342,5 +342,10 @@ namespace MyPetShop.Areas.Admin.Controllers
             _dbContext.SaveChanges();
             return RedirectToAction("PetImages", "Admin");
         }
+
+        public ActionResult Map()
+        {
+            return View();
+        }
     }
 }
