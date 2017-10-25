@@ -409,12 +409,13 @@
     <Content Include="Views\Pet\ShoppingCartPartial.cshtml" />
     <Content Include="Views\Pet\ListCartItem.cshtml" />
     <Content Include="Views\CheckOut\PlaceOrder.cshtml" />
+    <Content Include="Views\Pet\About.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\ShoppingCart\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\assets\" />
+    <Folder Include="Views\ShoppingCart\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

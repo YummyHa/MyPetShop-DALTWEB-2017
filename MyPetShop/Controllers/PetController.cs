@@ -39,6 +39,11 @@ namespace MyPetShop.Controllers
             return View(viewModel);
         }
 
+        public ActionResult About()
+        {
+            return View();
+        }
+
         public ActionResult Category()
         {
             var view = new PetViewModel

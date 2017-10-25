@@ -25,8 +25,8 @@
                             <p>
                                 <a href="@Url.Action("PetDetails", "Pet", new {id = pet.Id})"><img src="@image" alt="" /></a>
                             </p>
-                            <a href="product_detail.html" class="title">@pet.Name</a><br />
-                            <a href="@Url.Action("Products", "Pet", new {id = pet.CategoryPetId})" class="">AGE: @pet.Age years</a>
+                            <a href="@Url.Action("PetDetails", "Pet", new {id = pet.Id})" class="title">@pet.Name</a><br />
+                            <a href="@Url.Action("Products", "Pet", new {id = pet.Id})" class="">AGE: @pet.Age years</a>
                             <p class="price">$@pet.Price</p>
                         </div>
                     </li>
@@ -62,8 +62,8 @@
                             <p>
                                 <a href="@Url.Action("PetDetails", "Pet", new {id = pet.Id})"><img src="@image" alt=""/></a>
                             </p>
-                            <a href="product_detail.html" class="title">@pet.Name</a><br/>
-                            <a href="@Url.Action("Products", "Pet", new {id = pet.CategoryPetId})" class="">AGE: @pet.Age years</a>
+                            <a href="@Url.Action("PetDetails", "Pet", new {id = pet.Id})" class="title">@pet.Name</a><br/>
+                            <a href="@Url.Action("Products", "Pet", new {id = pet.Id})" class="">AGE: @pet.Age years</a>
                             <p class="price">$@pet.Price</p>
                         </div>
                     </li>
