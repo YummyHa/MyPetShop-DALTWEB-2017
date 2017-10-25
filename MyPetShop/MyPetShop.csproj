@@ -333,6 +333,7 @@
     <Content Include="Areas\Admin\Views\Admin\DeletePetImage.cshtml" />
     <Content Include="Areas\Admin\Views\Admin\AddPet.cshtml" />
     <Content Include="Areas\Admin\Views\Admin\AddPetImage.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\Map.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\common.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
