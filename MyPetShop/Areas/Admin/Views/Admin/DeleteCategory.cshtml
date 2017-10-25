@@ -1,0 +1,26 @@
+﻿@model MyPetShop.ViewModels.PetViewModel
+@{
+    ViewBag.Title = "DeleteCategory";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Delete Category</h2>
+<fieldset>
+    <legend><font color=red>  Bạn có thật sư muốn xóa!</font>    </legend>
+    @foreach (var item in Model.Categories)
+    {
+        <div class="display-lable"> Id :@item.Id</div>
+        <div class="display-lable"> Name  :@item.Name</div>
+    }
+
+</fieldset>
+@using (Html.BeginForm())
+{
+    <p>
+        <button type="submit" class="btn btn-danger">Xóa</button>
+        <a href="@Url.Action("Category","Admin")" class="btn btn-primary">
+            Trở Về
+        </a>
+    </p>
+}
+

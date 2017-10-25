@@ -1,0 +1,32 @@
+﻿@model MyPetShop.ViewModels.PetViewModel
+@{
+    ViewBag.Title = "DeletePet";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Delete Pet</h2>
+<fieldset>
+    <legend><font color=red>  Bạn có thật sư muốn xóa!</font>    </legend>
+    @foreach (var item in Model.Pets)
+    {
+        <div class="display-lable"> Id :@item.Id</div>
+        <div class="display-lable"> Name  :@item.Name</div>
+        <div class="display-lable"> Age :@item.Age</div>
+        <div class="display-lable"> Price  :@item.Price</div>
+        //<div class="display-lable"> <img src="~/images/@Model.HinhAnh" style="width:200px;height:200px" /></div>
+        <div class="display-lable"> Description  :@item.Description</div>
+        <div class="display-lable"> Status  :@item.Status</div>
+        <div class="display-lable"> CategoryPetId :@item.CategoryPetId</div>
+    }
+   
+</fieldset>
+@using (Html.BeginForm())
+{
+    <p>
+        <button type="submit" class="btn btn-danger">Xóa</button>
+        <a href="@Url.Action("Pet","Admin")" class="btn btn-primary">
+            Trở Về
+        </a>
+    </p>
+}
+
