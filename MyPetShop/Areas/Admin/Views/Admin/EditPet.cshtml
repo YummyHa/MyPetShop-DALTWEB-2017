@@ -1,0 +1,82 @@
+﻿@model MyPetShop.ViewModels.PetViewModel
+@{
+    ViewBag.Title = "EditPet";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="col-md-8">
+        <div class="card">
+            <div class="header">
+                <h4 class="title">Edit Pet</h4>
+            </div>
+            <div class="content">
+                <form>
+                    @foreach (var item in Model.Pets)
+                    {
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <label>ID (Mặc Định & Tự Tăng)</label>
+                                <input type="text" class="form-control" disabled placeholder="@item.Id">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Name Pet</label>
+                                <input type="text" class="form-control" name="txtname" value="@item.Name">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Age</label>
+                                <input type="text" class="form-control" name="txtage" value="@item.Age">
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Price</label>
+                                <input type="text" class="form-control" name="txtprice" value="@item.Price">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="sel1">CategoryPetId</label>
+                                <br />
+                                @Html.DropDownList("CategoryPetID")
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Description</label>
+                                <textarea rows="5" class="form-control" name="txtdes">@item.Description</textarea>
+                            </div>
+                        </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Status</label>
+                                <input type="text" class="form-control" name="txtstatus" value="@item.Status" >
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <button type="submit" class="btn btn-info btn-fill pull-right">Sữa Pet</button>
+                    <button type="button" class="btn database"><a href="@Url.Action("Pet", "Admin")">Về Pets</a></button>
+                    }
+                </form>
+            </div>
+        </div>
+    </div>
+}

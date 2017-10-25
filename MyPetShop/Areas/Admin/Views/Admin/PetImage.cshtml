@@ -1,0 +1,71 @@
+﻿@model MyPetShop.ViewModels.PetViewModel
+@{
+    ViewBag.Title = "PetImage";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="col-md-12">
+    <div class="card card-plain">
+        <div class="header">
+            <div>
+                <h4 class="title">Bảng Thông Tin PetImage</h4>
+                <p class="category">Quản lý thông tin PetImage</p>
+                <div class="places-buttons">
+                    <div class="col-md-2 col-md-offset-3">
+                        <button class="btn btn-default btn-block"><a href="@Url.Action("AddPetImage", "Admin")">Add PetImage</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content table-responsive table-full-width">
+            <table class="table table-hover">
+                <thead>
+                <th>Id</th>
+                <th>Uri</th>
+                <th>PetId</th>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.PetImages)
+                    {
+                        <tr>
+                            <td>
+                                @item.Id
+                            </td>
+                            <td>
+                                @item.Uri
+                            </td>
+                            <td>
+                                @item.PetId
+                            </td>
+                            <td>
+                                <a href="@Url.Action("EditPetImage", "Admin", new { id = item.Id })">
+                                    <img src="~/Areas/assets/img/icon_edit.png" width="20px" height="20px"> Edit
+                                </a>
+                            </td>
+                            <td>
+                                <a href="@Url.Action("DeletePetImage", "Admin", new { id = item.Id })">
+                                    <img src="~/Areas/assets/img/icon_delete.png" width="20px" height="20px"> Delete
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="MenuTrang" style="text-align:center;">
+
+    </div>
+    <style>
+        .MenuTrang li {
+            display: inline;
+        }
+    </style>
+
+</footer>
+
+
+

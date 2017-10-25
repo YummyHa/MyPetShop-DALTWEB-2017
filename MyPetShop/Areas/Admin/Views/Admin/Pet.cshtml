@@ -1,0 +1,87 @@
+﻿@model MyPetShop.ViewModels.PetViewModel
+@{
+    ViewBag.Title = "Pets";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="col-md-12">
+    <div class="card card-plain">
+        <div class="header">
+            <div>
+                <h4 class="title">Bảng Thông Tin Pet</h4>
+                <p class="category">Quản lý thông tin Pet</p>
+                <div class="places-buttons">
+                    <div class="col-md-2 col-md-offset-3">
+                        <button class="btn btn-default btn-block"><a href="@Url.Action("AddPet", "Admin")">Add Pet</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content table-responsive table-full-width">
+            <table class="table table-hover">
+                <thead>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Age</th>
+                <th>Price</th>
+                <th>Status</th>
+                <th>CategoryPetID</th>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Pets)
+                    {
+                        <tr>
+                            <td>
+                                @item.Id
+                            </td>
+                            <td>
+                                @item.Name
+                            </td>
+                            <td>
+                                @item.Age
+                            </td>
+                            <td>
+                                @item.Price
+                            </td>
+                            <td>
+                                @item.Description
+                            </td>
+
+                            <td>
+                                @item.Status
+                            </td>
+                            <td>
+                                @item.CategoryPetId
+                            </td>
+                            <td>
+                                <a href="@Url.Action("EditPet", "Admin", new { id = item.Id }) ">
+                                    <img src="~/Areas/assets/img/icon_edit.png" width="20px" height="20px"> Edit
+                                </a>
+                            </td>
+                            <td>
+                                <a href="@Url.Action("DeletePet", "Admin", new { id = item.Id }) ">
+                                    <img src="~/Areas/assets/img/icon_delete.png" width="20px" height="20px"> Delete
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="MenuTrang" style="text-align:center;">
+
+    </div>
+    <style>
+        .MenuTrang li {
+            display: inline;
+        }
+    </style>
+
+</footer>
+
+

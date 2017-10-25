@@ -1,0 +1,51 @@
+﻿@model MyPetShop.ViewModels.PetViewModel
+@{
+    ViewBag.Title = "EditCategoryPet";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="col-md-8">
+        <div class="card">
+            <div class="header">
+                <h4 class="title">Edit CategoryPet</h4>
+            </div>
+            <div class="content">
+                <form>
+                    @foreach (var item in Model.CategoryPets)
+                    {
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                    <label>ID (Mặc Định & Tự Tăng)</label>
+                                    <input type="text" class="form-control" disabled placeholder="@item.Id">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Name</label>
+                                    <input type="text" class="form-control" name="txtname" value="@item.Name">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="sel1">CategoryId</label>
+                                    <br />
+                                    @Html.DropDownList("CategoryID")
+                                </div>
+                            </div>
+                        </div>
+                            <button type="submit" class="btn btn-info btn-fill pull-right">Sữa CategoryPet</button>
+                            <button type="button" class="btn database"><a href="@Url.Action("CategoryPet", "Admin")">Về CategoryPet</a></button>
+                            }
+                    </form>
+            </div>
+        </div>
+    </div>
+}

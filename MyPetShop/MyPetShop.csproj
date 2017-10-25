@@ -199,6 +199,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -326,6 +328,23 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\Pet.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\CategoryPet.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\Category.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\PetImage.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\EditPet.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\DeletePet.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\EditCategoryPet.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\DeleteCategoryPet.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\EditCategory.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\DeleteCategory.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\EditPetImage.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\DeletePetImage.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\AddPet.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\AddPetImage.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\common.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -394,6 +413,8 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\ShoppingCart\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\assets\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
