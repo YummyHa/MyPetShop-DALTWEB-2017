@@ -77,7 +77,7 @@ namespace MyPetShop.Models
         [Required]
         [StringLength(255)]
         [Display(Name = "BirthDay")]
-        public DateTime DayOfBirth { get; set; }
+        public string DayOfBirth { get; set; }
 
         [StringLength(255)]
         public string Address { get; set; }

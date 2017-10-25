@@ -151,7 +151,7 @@ namespace MyPetShop.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Name = model.Name, DateOfBirth = model.DayOfBirth, Address = model.Address};
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Name = model.Name, DateOfBirth = DateTime.Parse(model.DayOfBirth), Address = model.Address};
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
